@@ -1,0 +1,83 @@
+.sidenav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 0px;
+  padding-top: 60px;
+  overflow-x: hidden;
+  background-color: #0f0f0f;
+  transition: 0.3s;
+}
+.sidenav .sidenav-wrapper {
+  position: fixed;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.sidenav .closebtn:hover {
+  transform: translateY(-2px);
+}
+
+.divider {
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 0.5px solid #f0f0f0;
+}
+/*  */
+
+.sidenav h3 {
+  font-size: 1.1rem;
+}
+.sidenav button {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f077;
+  transition: 0.2s;
+  /* border: 2px solid #000000; */
+}
+.sidenav button:hover {
+  transform: translateY(-2px);
+}
+
+/*  */
+
+.sidenav section {
+  max-width: 900px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 0.3rem;
+}
+.sidenav section h1 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.sidenav section h3 {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.sidenav section div {
+  display: flex;
+  justify-content: space-between;
+}
+.sidenav section div div {
+  gap: 0.3rem;
+}
+.sidenav section button {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  background-color: #f0f0f077;
+  transition: 0.2s;
+}
+.sidenav section button:hover {
+  transform: translateY(-2px);
+}

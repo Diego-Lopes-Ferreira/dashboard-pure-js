@@ -1,0 +1,101 @@
+<!--
+  
+  Dashboard tool
+  This is a quick way to look at your templates
+
+  DISCLAIMER
+  Because of CORS compatibility, all scripts are in two file
+
+  Table of contents
+  - Header
+    - Greeting
+    - Movie quote
+    - Menu Buttons
+  - Main list
+  - Hidden objects
+    - Form to add a shortcut
+    - Sidebar Menu
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/card.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+  <link rel="stylesheet" href="./styles/sidebarmenu.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <section>
+        <h1>Bom dia</h1>
+        <h3 id="quote"></h3>
+        <h3 id="who"></h3>
+      </section>
+      <section>
+        <button id="openMenu">Menu</button>
+      </section>
+    </header>
+    <main>
+      <!-- 
+        <a href="https://notion.so" target="blank" class="card">
+          <img src="assets/icons/notion.png" alt="Notion.so">
+          <h1>Notion.so</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nobis.</p>
+        </a>
+      </main>
+    -->
+  </div>
+
+  <aside id="mySidenav" class="sidenav">
+    <div class="sidenav-wrapper">
+      <a href="#" id="closeMenu" class="closebtn">&times;</a>
+      <button id="addShortcut">Add a thing</button>
+      <div class="divider"></div>
+
+      <!-- <h3>List</h3> -->
+      <div class="" id="sidenavList"></div>
+      <!-- 
+        <section>
+          <div>
+            <h1>Title</h1>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </div>
+          <h3>Description</h3>
+        </section>
+      -->
+      <div class="divider"></div>
+      <button id="reset">RESET</button>
+    </div>
+  </aside>
+  <div class="modal">
+    <section>
+      <button id="saveModal" onclick="alert('save')">save</button>
+      <button id="closeModal">&times;</button>
+    </section>
+    <section>
+      <form id="form" action="">
+        <input type="text" name="id" id="id" placeholder="id" style="display: none;" />
+        <input type="text" name="title" id="title" placeholder="title" /><br />
+        <input type="text" name="description" id="description" placeholder="description" /><br />
+        <input type="text" name="image" id="image" placeholder="image" /><br />
+        <input type="text" name="link" id="link" placeholder="link" /><br />
+      </form>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="./quotes.js"></script>
+</body>
+
+</html>
