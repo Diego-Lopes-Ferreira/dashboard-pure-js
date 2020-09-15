@@ -31,7 +31,6 @@
     - reset()
       resetDB()
       renderCards()
-------------------------------------------------------------------
   - App Functions:
     - saveToDB(item)
       Get the current data from localstorage
@@ -87,7 +86,7 @@ document.querySelector('#saveModal').onclick = save;
 document.querySelector('#closeModal').onclick = toggleModal;
 
 // RawInfo
-const localStorageKey = 'diego-items';
+const localStorageKey = 'app-name-items';
 const resetInfo = [
   {
     id: '0',
