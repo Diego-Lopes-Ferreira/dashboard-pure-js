@@ -76,7 +76,6 @@
       loop for each element creating a card and sidebarcard
 */
 
-
 // Selectors
 document.querySelector('#openMenu').onclick = toggleMenu;
 document.querySelector('#closeMenu').onclick = toggleMenu;
@@ -100,7 +99,7 @@ const resetInfo = [
     link: 'https://github.com/Diego-Lopes-Ferreira',
     img: 'github.png',
     title: 'Github',
-    desc: 'The world\'s leading software development platform',
+    desc: "The world's leading software development platform",
   },
   {
     id: '2',
@@ -128,7 +127,7 @@ function toggleModal() {
     modal.style.top = '-100%';
   } else {
     modal.style.top = '50%';
-    modal.style.transform = 'translate(50%, -50%)'
+    modal.style.transform = 'translate(50%, -50%)';
   }
   clearForm();
 }
@@ -176,23 +175,23 @@ function saveToDB(item) {
 function deleteFromDB(id) {
   let list = localStorage.getItem(localStorageKey);
   let elements = JSON.parse(list);
-  let newElements = elements.filter(current => {
+  let newElements = elements.filter((current) => {
     if (current.id !== id) {
       return current;
     }
-  })
+  });
   localStorage.setItem(localStorageKey, JSON.stringify(newElements));
 }
 function editOnDB(item) {
   let list = localStorage.getItem(localStorageKey);
   let elements = JSON.parse(list);
-  let newElements = elements.map(current => {
-    console.log(current, item)
+  let newElements = elements.map((current) => {
+    console.log(current, item);
     if (current.id === String(item.id)) {
-      console.log('if')
+      console.log('if');
       return item;
     } else {
-      console.log('else')
+      console.log('else');
       return current;
     }
   });
@@ -236,7 +235,7 @@ function createCard(item) {
   let paragraph = document.createElement('p');
 
   card.setAttribute('href', link);
-  card.setAttribute('target', 'blank');
+  card.setAttribute('target', '_blank');
   card.classList.add('card');
   image.setAttribute('src', `./assets/icons/${img}`);
   image.setAttribute('alt', title);
@@ -269,8 +268,8 @@ function createSidebarCard(item) {
 
   partTwo.appendChild(editBtn);
   partTwo.appendChild(deleteBtn);
-  partOne.appendChild(header)
-  partOne.appendChild(partTwo)
+  partOne.appendChild(header);
+  partOne.appendChild(partTwo);
   sideBarSection.appendChild(partOne);
   sideBarSection.appendChild(paragraph);
   sidePart.appendChild(sideBarSection);
