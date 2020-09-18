@@ -2,7 +2,7 @@
 
   Table of contents
   - Selectors
-    - Buttons: [openMenu, closeMenu, reset, add, save, close]
+    - Buttons: [openMenu, closeMenu, reset, add, save, close, view]
 
   - RawInfo
     - localStorageKey
@@ -16,6 +16,8 @@
       Change the top property of the modal
     - toggleMenu()
       Change the width of the div#sidenav to 0 or 250
+    - closeMenu()
+      Change the width of the div#sidenav to 0
     - save()
       saveToDB(readForm())
       toggleModal()
@@ -83,6 +85,7 @@ document.querySelector('#reset').onclick = reset;
 document.querySelector('#addShortcut').onclick = toggleModal;
 document.querySelector('#saveModal').onclick = save;
 document.querySelector('#closeModal').onclick = toggleModal;
+document.querySelector('#wrapper').onclick = closeMenu;
 
 // RawInfo
 const localStorageKey = 'app-name-items';
@@ -139,6 +142,12 @@ function toggleMenu() {
     sideNav.style.width = '250px';
   }
 }
+function closeMenu() {
+  const sideNav = document.querySelector('.sidenav');
+  if (sideNav.clientWidth > 0) {
+    sideNav.style.width = '0px';
+  }
+};
 function save() {
   let item = readForm();
   if (item.id === '') {
@@ -188,12 +197,9 @@ function editOnDB(item) {
   let list = localStorage.getItem(localStorageKey);
   let elements = JSON.parse(list);
   let newElements = elements.map((current) => {
-    console.log(current, item);
     if (current.id === String(item.id)) {
-      console.log('if');
       return item;
     } else {
-      console.log('else');
       return current;
     }
   });
