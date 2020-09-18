@@ -160,8 +160,10 @@ function editItem(item) {
   fillForm(item);
 }
 function reset() {
-  resetDB();
-  renderCards();
+  if (confirm('Sure about that?')) {
+    resetDB();
+    renderCards();
+  }
 }
 
 // App Functions
