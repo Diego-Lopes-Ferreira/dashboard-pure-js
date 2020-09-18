@@ -128,3 +128,4 @@ const movieQuotes = [
 ];
 generateQuote();
 window.addEventListener('focus', generateQuote);
+document.querySelector('#changeQuote').onclick = generateQuote;

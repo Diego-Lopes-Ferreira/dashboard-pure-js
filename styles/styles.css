@@ -71,6 +71,16 @@ header button {
   transition: 0.2s;
   border: 2px solid #000000;
 }
+header button#changeQuote {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #ff0000; */
+  transition: 0.2s;
+  border: 2px solid transparent;
+  text-align: left;
+}
 header button:hover {
   transform: translateY(-2px);
 }
