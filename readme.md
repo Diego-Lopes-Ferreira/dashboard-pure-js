@@ -16,9 +16,9 @@
 
 All its done with _vanilla_ javascript
 
-Check out the [`script.js`](./script.js) and the [`quotes.js`](./quotes.js) to cahnge the features
+Check out the [`script.js`](./script.js) and the [`quotes.js`](./quotes.js) to change the features
 
-On `script.js`, change the localstorage key to whatever you need it to be
+On [`script.js`](./script.js), change the localstorage key to whatever you need it to be
 
 ## :rocket: Release History
 
