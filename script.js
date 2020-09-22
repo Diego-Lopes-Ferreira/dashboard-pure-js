@@ -139,7 +139,7 @@ function toggleMenu() {
   if (sideNav.clientWidth > 0) {
     sideNav.style.width = '0px';
   } else {
-    sideNav.style.width = '250px';
+    sideNav.style.width = '300px';
   }
 }
 function closeMenu() {
