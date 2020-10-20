@@ -179,8 +179,12 @@ function reset() {
 function saveToDB(item) {
   let list = localStorage.getItem(localStorageKey);
   let elements = JSON.parse(list);
-  item.id = Math.floor(Math.random() * (9999 - 1000) + 1000).toString();
-  elements.push(item);
+  if (elements) {
+    item.id = Math.floor(Math.random() * (9999 - 1000) + 1000).toString();
+    elements.push(item);
+  } else {
+    elements = [item];
+  }
   localStorage.setItem(localStorageKey, JSON.stringify(elements));
 }
 function deleteFromDB(id) {
@@ -288,10 +292,30 @@ function renderCards() {
 
   mainPart.innerHTML = '';
   sidePart.innerHTML = '';
-  let list = localStorage.getItem(localStorageKey);
-  let elements = JSON.parse(list);
-  for (let element of elements) {
-    createCard(element);
-    createSidebarCard(element);
-  }
+  let stored = localStorage.getItem(localStorageKey);
+  let elements = JSON.parse(stored);
+  console.log(elements)
+  if (elements) {
+
+    if (elements.length !== 0) {
+      console.log('here')
+      for (let element of elements) {
+        createCard(element);
+        createSidebarCard(element);
+      }
+    } else {
+      createCard({
+        id: '0',
+        link: 'https://github.com/Diego-Lopes-Ferreira',
+        img: 'github.png',
+        title: 'Lost ?',
+        desc: "Check the \"Get Started\" post on GitHub",
+      });
+      createSidebarCard({
+        id: '0',
+        title: 'Click Add a thing',
+        desc: 'and start using'
+      });
+    } // else
+  } // if (elements)
 }
