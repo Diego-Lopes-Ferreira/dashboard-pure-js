@@ -54,7 +54,7 @@
         </a>
       </main>
     -->
-    <i href="#" data-feather="home"></i>
+      <i href="#" data-feather="home"></i>
   </div>
 
   <aside id="mySidenav" class="sidenav">
@@ -81,7 +81,7 @@
       <button id="reset">RESET</button>
     </div>
   </aside>
-  
+
   <div class="modal">
     <section>
       <button id="saveModal" onclick="alert('save')">Save</button>
@@ -98,11 +98,11 @@
     </section>
   </div>
 
-  <script src="./dist/bundle.js"></script>
   <script src="./dist/feather.min.js"></script>
   <script>
-    feather.replace()
+    window.addEventListener('focus', feather.replace)
   </script>
+  <script src="./dist/bundle.js"></script>
 </body>
 
 </html>
