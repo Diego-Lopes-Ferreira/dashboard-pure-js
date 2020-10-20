@@ -12,7 +12,7 @@
     - generateQuote();
 */
 
-function generateQuote() {
+export function generateQuote() {
   const randomNumber = Math.floor(Math.random() * 100);
   const completeQuote = movieQuotes[randomNumber];
   const last = completeQuote.lastIndexOf('" ');
@@ -126,6 +126,3 @@ const movieQuotes = [
   '"I\'ll get you, my pretty, and your little dog too!" The Wizard of Oz',
   '"I\'m the King of the World" Titanic',
 ];
-generateQuote();
-window.addEventListener('focus', generateQuote);
-document.querySelector('#changeQuote').onclick = generateQuote;
