@@ -31,6 +31,7 @@
 */
 
 import { saveToDB, deleteFromDB, editOnDB, resetDB } from "./localstorage.api";
+import { fillForm, clearForm, readForm } from './form.api';
 import { renderCards } from "./views";
 
 export function toggleModal(forceClose = false) {
