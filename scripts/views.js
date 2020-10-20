@@ -29,7 +29,7 @@ export function renderCards() {
 
   mainPart.innerHTML = "";
   sidePart.innerHTML = "";
-  let elements = readFromDB()
+  let elements = readFromDB();
   // console.log(elements);
   if (elements) {
     if (elements.length !== 0) {
@@ -56,23 +56,25 @@ export function renderCards() {
 }
 
 function createCard(item) {
-  const { title, desc, img, link } = item;
+  const { title, desc, icon, link } = item;
   const mainPart = document.querySelector("main");
 
   let card = document.createElement("a");
-  let image = document.createElement("img");
+  let iconElement = document.createElement("i");
   let header = document.createElement("h1");
   let paragraph = document.createElement("p");
 
   card.setAttribute("href", link);
   card.setAttribute("target", "_blank");
   card.classList.add("card");
-  image.setAttribute("src", `./assets/icons/${img}`);
-  image.setAttribute("alt", title);
+
+  iconElement.setAttribute("data-feather", icon);
+
   header.innerHTML = title;
+
   paragraph.innerHTML = desc;
 
-  card.appendChild(image);
+  card.appendChild(iconElement);
   card.appendChild(header);
   card.appendChild(paragraph);
   mainPart.appendChild(card);
@@ -105,5 +107,3 @@ function createSidebarCard(item) {
   sideBarSection.appendChild(paragraph);
   sidePart.appendChild(sideBarSection);
 }
-
-
