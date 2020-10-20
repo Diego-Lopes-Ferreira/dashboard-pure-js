@@ -1,0 +1,9 @@
+{
+  "name": "Getting Started Diego :)",
+  "version": "1.0",
+  "description": "A better new tab page",
+  "manifest_version": 2,
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}
