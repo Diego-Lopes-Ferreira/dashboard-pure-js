@@ -1,32 +1,29 @@
 /*
   Table of Contents
   - User Functions
-    - toggleModal()
-      Change the top property of the modal
-      (sends it up)
+    - handleToggleModal(forceClose)
+      Change the top property of the modal (sends it up or down)
+      (if forceClose === true: sends it up)
 
-    - toggleMenu()
+    - handleToggleMenu(forceClose)
       Change the width of the div#sidenav to 0 or 250
-    
-    - closeMenu()
-      Change the width of the div#sidenav to 0
-      
+      (if forceClose === true: div#sidenav goes to 0)
   
-    - save()
+    - handleSave()
       if the item exists:
         edit on DB what is in the form
       else:
         create item on database
       then: toggleModal(closing), toggleMenu(closing) and renderCards
 
-    - deleteItem(id)
+    - handleDeleteItem(id)
       call the deleteFromDB() function
       then: toggleModal(closing), toggleMenu(closing) and renderCards
 
-    - editItem(item)
+    - handleEditItem(item)
       toggleModal and fill the form with the item
 
-    - reset()
+    - handleReset()
       calls resetDB() and renderCards
 */
 
@@ -34,7 +31,7 @@ import { saveToDB, deleteFromDB, editOnDB, resetDB } from "./localstorage.api";
 import { fillForm, clearForm, readForm } from './form.api';
 import { renderCards } from "./views";
 
-export function toggleModal(forceClose = false) {
+export function handleToggleModal(forceClose = false) {
   const modal = document.querySelector(".modal");
   if (forceClose) {
     modal.style.top = "-100%";
@@ -50,7 +47,7 @@ export function toggleModal(forceClose = false) {
   clearForm();
 }
 
-export function toggleMenu(forceClose = false) {
+export function handleToggleMenu(forceClose = false) {
   const sideNav = document.querySelector(".sidenav");
   if (forceClose) {
     sideNav.style.width = "0px";
@@ -63,7 +60,7 @@ export function toggleMenu(forceClose = false) {
   } // else (forceClose)
 }
 
-export function save() {
+export function handleSave() {
   let item = readForm();
   if (item.id === "") {
     saveToDB(item);
@@ -75,18 +72,18 @@ export function save() {
   renderCards();
 }
 
-export function deleteItem(id) {
+export function handleDeleteItem(id) {
   deleteFromDB(id);
   toggleMenu();
   renderCards();
 }
 
-export function clickToEditItem(item) {
+export function handleEditItem(item) {
   toggleModal();
   fillForm(item);
 }
 
-export function reset() {
+export function handleReset() {
   if (confirm("Sure about that?")) {
     resetDB();
     renderCards();
