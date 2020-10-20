@@ -1,11 +1,10 @@
 import generateQuote from "./quotes";
 import renderCards from "./views";
 import {
-  handleDeleteItem,
-  handleEditItem,
   handleReset,
   handleSave,
   handleToggleMenu,
+  handleCloseMenu,
   handleToggleModal,
 } from "./handlers";
 
@@ -19,8 +18,6 @@ document.querySelector("#reset").onclick = handleReset;
 document.querySelector("#addShortcut").onclick = handleToggleModal;
 document.querySelector("#saveModal").onclick = handleSave;
 document.querySelector("#closeModal").onclick = handleToggleModal;
-document.querySelector("#wrapper").onclick = () => {
-  handleToggleMenu(forceClose = true);
-}
+// document.querySelector("#wrapper").onclick = handleCloseMenu;
 
 renderCards();

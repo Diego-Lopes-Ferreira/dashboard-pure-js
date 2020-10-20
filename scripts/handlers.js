@@ -1,13 +1,14 @@
 /*
   Table of Contents
   - User Functions
-    - handleToggleModal(forceClose)
+    - handleToggleModal()
       Change the top property of the modal (sends it up or down)
-      (if forceClose === true: sends it up)
 
-    - handleToggleMenu(forceClose)
+    - handleToggleMenu()
       Change the width of the div#sidenav to 0 or 250
-      (if forceClose === true: div#sidenav goes to 0)
+  
+    - handleCloseMenu()
+      Change the width of the div#sidenav to 0
   
     - handleSave()
       if the item exists:
@@ -28,36 +29,36 @@
 */
 
 import { saveToDB, deleteFromDB, editOnDB, resetDB } from "./localstorage.api";
-import { fillForm, clearForm, readForm } from './form.api';
-import { renderCards } from "./views";
+import { fillForm, clearForm, readForm } from "./form.api";
+import renderCards from "./views";
 
-export function handleToggleModal(forceClose = false) {
+export function handleToggleModal() {
   const modal = document.querySelector(".modal");
-  if (forceClose) {
+
+  if (modal.style.top === "50%") {
     modal.style.top = "-100%";
   } else {
-    if (modal.style.top === "50%") {
-      modal.style.top = "-100%";
-    } else {
-      modal.style.top = "50%";
-      modal.style.transform = "translate(50%, -50%)";
-    } // else (top distance)
-  } // else (forceClose)
+    modal.style.top = "50%";
+    modal.style.transform = "translate(50%, -50%)";
+  } // else (top distance)
 
   clearForm();
 }
 
-export function handleToggleMenu(forceClose = false) {
+export function handleToggleMenu() {
   const sideNav = document.querySelector(".sidenav");
-  if (forceClose) {
+
+  if (sideNav.clientWidth > 10) {
     sideNav.style.width = "0px";
   } else {
-    if (sideNav.clientWidth > 0) {
-      sideNav.style.width = "0px";
-    } else {
-      sideNav.style.width = "300px";
-    } // else (width)
-  } // else (forceClose)
+    sideNav.style.width = "300px";
+  } // else (width)
+}
+
+export function handleCloseMenu() {
+  const sideNav = document.querySelector(".sidenav");
+
+  sideNav.style.width = "0px";
 }
 
 export function handleSave() {
@@ -67,19 +68,19 @@ export function handleSave() {
   } else {
     editOnDB(item);
   }
-  toggleModal();
-  toggleMenu();
+  handleToggleModal();
+  handleToggleMenu();
   renderCards();
 }
 
 export function handleDeleteItem(id) {
   deleteFromDB(id);
-  toggleMenu();
+  handleToggleMenu();
   renderCards();
 }
 
 export function handleEditItem(item) {
-  toggleModal();
+  handleToggleModal();
   fillForm(item);
 }
 

@@ -9,8 +9,9 @@
     - const movieQuotes
 */
 
-export function generateQuote() {
-  const randomNumber = Math.floor(Math.random() * 100);
+export default function generateQuote() {
+  const randomNumber = Math.floor(Math.random() * 85);
+  
   const completeQuote = movieQuotes[randomNumber];
 
   const last = completeQuote.lastIndexOf('" ');
@@ -59,7 +60,7 @@ const movieQuotes = [
   '"I\'ll have what she\'s having." When Harry Met Sally...',
   '"You know how to whistle, don\'t you, Steve? You just put your lips together and blow." To Have and Have Not',
   '"You\'re gonna need a bigger boat." Jaws',
-  "\"Badges? We ain't got no badges! We don't need no badges! I don't have to show you any stinking badges!\" Gold Hat",
+  '"Badges? We ain\'t got no badges! We don\'t need no badges! I don\'t have to show you any stinking badges!" Gold Hat',
   '"I\'ll be back." The Terminator',
   '"Today, I consider myself the luckiest man on the face of the Earth." The Pride of the Yankees',
   '"If you build it, he will come." Field of Dreams',
@@ -72,7 +73,7 @@ const movieQuotes = [
   '"Well, nobody\'s perfect." Some Like It Hot',
   '"It\'s alive! It\'s alive!" Frankenstein',
   '"Houston, we have a problem." Apollo 13 (and literally every other realistic space movie)',
-  "\"You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya, punk?\" Dirty Harry",
+  '"You\'ve got to ask yourself one question: \'Do I feel lucky?\' Well, do ya, punk?" Dirty Harry',
   '"You had me at \'hello.\'" Jerry Maguire',
   '"One morning I shot an elephant in my pajamas. How he got in my pajamas, I don\'t know." Animal Crackers',
   '"There\'s no crying in baseball!" A League of Their Own',

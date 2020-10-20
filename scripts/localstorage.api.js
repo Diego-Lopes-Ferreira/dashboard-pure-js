@@ -98,10 +98,12 @@ export function resetDB() {
 function generateId(items) {
   // Math.floor(Math.random() * (9999 - 1000) + 1000).toString();
   const id = Math.floor(Math.random() * (9999 - 1000) + 1000).toString();
-  items.forEach(item => {
-    if (item === id) {
-      generateId(items);
-    }
-  });
+  if (items.length > 0) {
+    items.forEach(item => {
+      if (item === id) {
+        generateId(items);
+      }
+    });
+  }
   return id;
 }

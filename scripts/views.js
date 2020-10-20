@@ -22,18 +22,17 @@
 */
 
 import { readFromDB } from "./localstorage.api";
+import { handleDeleteItem, handleEditItem }from './handlers';
 
-export function renderCards() {
+export default function renderCards() {
   const mainPart = document.querySelector("main");
   const sidePart = document.querySelector("#sidenavList");
 
   mainPart.innerHTML = "";
   sidePart.innerHTML = "";
   let elements = readFromDB();
-  // console.log(elements);
   if (elements) {
     if (elements.length !== 0) {
-      console.log("here");
       for (let element of elements) {
         createCard(element);
         createSidebarCard(element);
@@ -51,8 +50,9 @@ export function renderCards() {
         title: "Click Add a thing",
         desc: "and start using",
       });
-    } // else
-  } // if (elements)
+    } // else (elements.length)
+  } // else (elements)
+  feather.replace()
 }
 
 function createCard(item) {
@@ -92,9 +92,9 @@ function createSidebarCard(item) {
   let partOne = document.createElement("div");
   let partTwo = document.createElement("div");
 
-  editBtn.onclick = () => editItem(item);
+  editBtn.onclick = () => handleEditItem(item);
   editBtn.innerHTML = "Edit";
-  deleteBtn.onclick = () => deleteItem(id);
+  deleteBtn.onclick = () => handleDeleteItem(id);
   deleteBtn.innerHTML = "Delete";
   header.innerHTML = title;
   paragraph.innerHTML = desc;
