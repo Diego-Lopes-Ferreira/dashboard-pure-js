@@ -65,7 +65,7 @@ function createCard(item) {
   let paragraph = document.createElement("p");
 
   card.setAttribute("href", link);
-  card.setAttribute("target", "_blank");
+  // card.setAttribute("target", "_blank");
   card.classList.add("card");
 
   iconElement.setAttribute("data-feather", icon);
