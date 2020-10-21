@@ -1,20 +1,3 @@
-<!--
-  
-  Dashboard tool
-  This is a quick way to look at your templates
-
-
-  Table of contents
-  - Header
-    - Greeting
-    - Movie quote
-    - Menu Buttons
-  - Main list
-  - Hidden objects
-    - Form to add a shortcut
-    - Sidebar Menu
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +16,7 @@
   <div class="wrapper" id="wrapper">
     <header>
       <section>
-        <h1>MAINTENANCE</h1>
+        <h1>32°C</h1>
         <button id="changeQuote">
           <h3 id="quote"></h3>
           <h3 id="who"></h3>
@@ -43,15 +26,7 @@
         <button id="openMenu">Menu</button>
       </section>
     </header>
-    <main>
-      <!-- 
-        <a href="https://notion.so" target="blank" class="card">
-          <img src="assets/icons/notion.png" alt="Notion.so">
-          <h1>Notion.so</h1>
-          <p>The all in one workspace</p>
-        </a>
-      </main>
-    -->
+    <main></main>
   </div>
 
   <aside id="mySidenav" class="sidenav">
@@ -59,21 +34,7 @@
       <a href="#" id="closeMenu" class="closebtn">&times;</a>
       <button id="addShortcut">Add a thing</button>
       <div class="divider"></div>
-
-      <!-- <h3>List</h3> -->
-      <div class="" id="sidenavList"></div>
-      <!-- 
-        <section>
-          <div>
-            <h1>Title</h1>
-            <div>
-              <button>Edit</button>
-              <button>Delete</button>
-            </div>
-          </div>
-          <h3>Description</h3>
-        </section>
-      -->
+      <div class="" id="sidenavList"></div>  
       <div class="divider"></div>
       <button id="reset">RESET</button>
     </div>
@@ -95,11 +56,11 @@
     </section>
   </div>
 
-  <script src="./dist/feather.min.js"></script>
+  <script src="./feather.min.js"></script>
   <script>
     window.addEventListener('focus', feather.replace)
   </script>
-  <script src="./dist/bundle.js"></script>
+  <script src="./bundle.js"></script>
 </body>
 
 </html>
