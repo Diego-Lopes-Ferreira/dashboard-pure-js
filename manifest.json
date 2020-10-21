@@ -1,9 +1,13 @@
 {
-  "name": "Getting Started Diego :)",
+  "name": "Dashboard - A better new tab page",
   "version": "1.0",
   "description": "A better new tab page",
   "manifest_version": 2,
-  "chrome_url_overrides" : {
+  "chrome_url_overrides": {
     "newtab": "./dist/index.html"
+  },
+  "browser_action": {
+    "default_icon": "assets/favicon.png",
+    "default_title": "Dashboard"
   }
 }
