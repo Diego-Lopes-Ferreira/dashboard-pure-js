@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="stylesheet" href="./styles/card.css">
-  <link rel="stylesheet" href="./styles/modal.css">
-  <link rel="stylesheet" href="./styles/sidebarmenu.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/card.css">
+  <link rel="stylesheet" href="../styles/modal.css">
+  <link rel="stylesheet" href="../styles/sidebarmenu.css">
 </head>
 
 <body>
@@ -31,10 +31,12 @@
 
   <aside id="mySidenav" class="sidenav">
     <div class="sidenav-wrapper">
-      <a href="#" id="closeMenu" class="closebtn">&times;</a>
-      <button id="addShortcut">Add a thing</button>
+      <div class="up-part">
+        <button id="addShortcut">Add a thing</button>
+        <a href="#" id="closeMenu" class="closebtn">&times;</a>
+      </div>
       <div class="divider"></div>
-      <div class="" id="sidenavList"></div>  
+      <div id="sidenavList"></div>  
       <div class="divider"></div>
       <button id="reset">RESET</button>
     </div>
