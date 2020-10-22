@@ -117,5 +117,6 @@ export function handleExportToUser() {
 export function handleImportFromUser() {
   let items = readImportTextarea();
   importFromUser(items);
+  handleToggleTextareaModal();
   renderCards();
 }
