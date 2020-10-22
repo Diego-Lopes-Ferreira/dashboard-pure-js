@@ -33,6 +33,7 @@ import { fillForm, clearForm, readForm } from "./form.api";
 import renderCards from "./views";
 
 export function handleToggleModal() {
+  handleCloseMenu();
   const modal = document.querySelector(".modal");
 
   if (modal.style.top === "50%") {
@@ -41,7 +42,6 @@ export function handleToggleModal() {
     modal.style.top = "50%";
     modal.style.transform = "translate(50%, -50%)";
   } // else (top distance)
-
   clearForm();
 }
 
