@@ -19,38 +19,37 @@
       - resetDB
       save to localStorage the "resetInfo" list
 */
-const localStorageKey = 'app-name-items';
+const localStorageKey = "app-name-items";
 const resetInfo = [
   {
-    id: '0',
-    link: 'https://www.notion.so',
-    icon: 'home',
-    title: 'Notion',
-    desc: 'The all in one workspace',
+    id: "0",
+    link: "https://www.notion.so",
+    icon: "home",
+    title: "Notion",
+    desc: "The all in one workspace",
   },
   {
-    id: '1',
-    link: 'https://github.com/Diego-Lopes-Ferreira',
-    icon: 'home',
-    title: 'Github',
+    id: "1",
+    link: "https://github.com/Diego-Lopes-Ferreira",
+    icon: "home",
+    title: "Github",
     desc: "The world's leading software development platform",
   },
   {
-    id: '2',
-    link: 'https://web.whatsapp.com/',
-    icon: 'home',
-    title: 'WhatsApp',
-    desc: 'Now on PC',
+    id: "2",
+    link: "https://web.whatsapp.com/",
+    icon: "home",
+    title: "WhatsApp",
+    desc: "Now on PC",
   },
   {
-    id: '3',
-    link: 'https://habitica.com/',
-    icon: 'home',
-    title: 'Habitica',
-    desc: 'Gamify your life',
+    id: "3",
+    link: "https://habitica.com/",
+    icon: "home",
+    title: "Habitica",
+    desc: "Gamify your life",
   },
 ];
-
 
 export function saveToDB(item) {
   let elements = readFromDB();
@@ -64,7 +63,7 @@ export function saveToDB(item) {
 }
 
 export function readFromDB() {
-  let stored = localStorage.getItem(localStorageKey);
+  const stored = localStorage.getItem(localStorageKey);
   let elements = JSON.parse(stored);
   return elements;
 }
@@ -95,11 +94,26 @@ export function resetDB() {
   localStorage.setItem(localStorageKey, JSON.stringify(resetInfo));
 }
 
+export function exportToUser() {
+  const stored = localStorage.getItem(localStorageKey);
+  const el = document.createElement("textarea");
+  el.value = stored;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand("copy");
+  document.body.removeChild(el);
+  alert('Save this into a .txt or .json file, so you can import later');
+}
+
+export function importFromUser(items) {
+  localStorage.setItem(localStorageKey, items);
+}
+
 function generateId(items) {
   // Math.floor(Math.random() * (9999 - 1000) + 1000).toString();
   const id = Math.floor(Math.random() * (9999 - 1000) + 1000).toString();
   if (items.length > 0) {
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item === id) {
         generateId(items);
       }

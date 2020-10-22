@@ -34,3 +34,9 @@ export function fillForm(item) {
   document.querySelector('.modal #icon').value = icon;
   document.querySelector('.modal #link').value = link;
 }
+
+export function readImportTextarea() {
+  const data = document.querySelector('.textarea-modal #info').value;
+  console.log(data)
+  return data;
+}

@@ -25,6 +25,12 @@
       <section>
         <button id="openMenu">Menu</button>
       </section>
+      <section>
+        <button id="import">import</button>
+      </section>
+      <section>
+        <button id="export">export</button>
+      </section>
     </header>
     <main></main>
   </div>
@@ -44,7 +50,7 @@
 
   <div class="modal">
     <section>
-      <button id="saveModal" onclick="alert('save')">Save</button>
+      <button id="saveModal">Save</button>
       <button id="closeModal">&times;</button>
     </section>
     <section>
@@ -54,6 +60,18 @@
         <input type="text" name="description" id="description" placeholder="description" /><br />
         <input type="text" name="icon" id="icon" placeholder="icon (see feathericons.com for a complete list)" /><br />
         <input type="text" name="link" id="link" placeholder="link" /><br />
+      </form>
+    </section>
+  </div>
+
+  <div class="textarea-modal">
+    <section>
+      <button id="saveTextareaModal">Import</button>
+      <button id="closeTextareaModal">&times;</button>
+    </section>
+    <section>
+      <form id="form" action="">
+        <textarea type="text" name="info" id="info" placeholder="info"></textarea>
       </form>
     </section>
   </div>

@@ -28,8 +28,15 @@
       calls resetDB() and renderCards
 */
 
-import { saveToDB, deleteFromDB, editOnDB, resetDB } from "./localstorage.api";
-import { fillForm, clearForm, readForm } from "./form.api";
+import {
+  saveToDB,
+  deleteFromDB,
+  editOnDB,
+  resetDB,
+  exportToUser,
+  importFromUser,
+} from "./localstorage.api";
+import { fillForm, clearForm, readForm, readImportTextarea } from "./form.api";
 import renderCards from "./views";
 
 export function handleToggleModal() {
@@ -45,6 +52,18 @@ export function handleToggleModal() {
   clearForm();
 }
 
+export function handleToggleTextareaModal() {
+  // handleCloseMenu();
+  const modal = document.querySelector(".textarea-modal");
+
+  if (modal.style.top === "50%") {
+    modal.style.top = "-100%";
+  } else {
+    modal.style.top = "50%";
+    modal.style.transform = "translate(50%, -50%)";
+  } // else (top distance)
+}
+
 export function handleToggleMenu() {
   const sideNav = document.querySelector(".sidenav");
 
@@ -57,7 +76,6 @@ export function handleToggleMenu() {
 
 export function handleCloseMenu() {
   const sideNav = document.querySelector(".sidenav");
-
   sideNav.style.width = "0px";
 }
 
@@ -89,4 +107,15 @@ export function handleReset() {
     resetDB();
     renderCards();
   }
+}
+
+export function handleExportToUser() {
+  // handleToggleMenu();
+  exportToUser();
+}
+
+export function handleImportFromUser() {
+  let items = readImportTextarea();
+  importFromUser(items);
+  renderCards();
 }
