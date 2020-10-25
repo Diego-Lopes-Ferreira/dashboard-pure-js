@@ -1,5 +1,5 @@
 /*
-  [ ] saveItemToDB(item, folderId) exported
+  [v] saveItemToDB(item, folderId) exported
   [v] editItemOnDB(item)           exported
   [v] deleteItemFromDB(id)         exported
 */
@@ -24,7 +24,7 @@ export function saveItemToDB(item, folderId) {
 export function editItemOnDB(item, folderId) {
   // item = { id: string '000000',link: string, icon: string, title: string }
   deleteItemFromDB(item.id);
-  saveItemToDB(item);
+  saveItemToDB(item, folderId);
 }
 
 export function deleteItemFromDB(id) {
