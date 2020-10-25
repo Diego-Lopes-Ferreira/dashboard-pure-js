@@ -1,0 +1,21 @@
+/* * Header */
+header {
+  width: 100%;
+  height: 100px;
+  padding: 2rem 2rem 0 2rem;
+  text-align: left;
+  background-color: #ff0000;
+}
+header h3 {
+  text-align: left;
+}
+
+/* * List of items */
+.list-of-items {
+  flex: 1;
+  padding: 2rem;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  background-color: #00ffff;
+}
+/* * Item Card */
