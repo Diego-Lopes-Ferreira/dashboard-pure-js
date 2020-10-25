@@ -63,17 +63,17 @@ function createCard(item) {
   let iconElement = document.createElement("i");
   let header = document.createElement("h1");
   let paragraph = document.createElement("p");
-
+  
   card.setAttribute("href", link);
   // card.setAttribute("target", "_blank");
   card.classList.add("card");
-
+  
   iconElement.setAttribute("data-feather", icon);
-
+  
   header.innerHTML = title;
-
+  
   paragraph.innerHTML = desc;
-
+  
   card.appendChild(iconElement);
   card.appendChild(header);
   card.appendChild(paragraph);
@@ -81,29 +81,24 @@ function createCard(item) {
 }
 
 function createSidebarCard(item) {
-  const { id, title, desc } = item;
+  const { id, title, desc, icon } = item;
+  /*
+    <button>
+      <icon></icon>
+      <h1></h1>
+    </button>
+  */
   const sidePart = document.querySelector("#sidenavList");
-
-  let sideBarSection = document.createElement("section");
+  
+  let sideBarButton = document.createElement("button");
   let header = document.createElement("h1");
-  let editBtn = document.createElement("button");
-  let deleteBtn = document.createElement("button");
-  let paragraph = document.createElement("h3");
-  let partOne = document.createElement("div");
-  let partTwo = document.createElement("div");
-
-  editBtn.onclick = () => handleEditItem(item);
-  editBtn.innerHTML = "Edit";
-  deleteBtn.onclick = () => handleDeleteItem(id);
-  deleteBtn.innerHTML = "Delete";
+  let iconElement = document.createElement("i");
+  
+  iconElement.setAttribute("data-feather", icon);
+  
   header.innerHTML = title;
-  paragraph.innerHTML = desc;
 
-  partTwo.appendChild(editBtn);
-  partTwo.appendChild(deleteBtn);
-  partOne.appendChild(header);
-  partOne.appendChild(partTwo);
-  sideBarSection.appendChild(partOne);
-  sideBarSection.appendChild(paragraph);
-  sidePart.appendChild(sideBarSection);
+  sideBarButton.appendChild(iconElement);
+  sideBarButton.appendChild(header);
+  sidePart.appendChild(sideBarButton);
 }

@@ -14,39 +14,38 @@
 
 <body>
   <div class="wrapper" id="wrapper">
-    <header>
-      <section>
-        <h1>32°C</h1>
-        <button id="changeQuote">
-          <h3 id="quote"></h3>
-          <h3 id="who"></h3>
-        </button>
-      </section>
-      <section>
-        <button id="openMenu">Menu</button>
-      </section>
-      <section>
-        <button id="import">import</button>
-      </section>
-      <section>
-        <button id="export">export</button>
-      </section>
-    </header>
-    <main></main>
-  </div>
+    <div class="right">
+      <header>
+        <section>
+          <h1>32°C</h1>
+          <button id="changeQuote">
+            <h3 id="quote"></h3>
+            <h3 id="who"></h3>
+          </button>
+        </section>
+        <section>
+          <button id="import">import</button>
+          <button id="export">export</button>
+          <button id="openMenu">Menu</button>
+        </section>
+      </header>
 
-  <aside id="mySidenav" class="sidenav">
-    <div class="sidenav-wrapper">
-      <div class="up-part">
-        <button id="addShortcut">Add a thing</button>
-        <a href="#" id="closeMenu" class="closebtn">&times;</a>
-      </div>
-      <div class="divider"></div>
-      <div id="sidenavList"></div>  
-      <div class="divider"></div>
-      <button id="reset">RESET</button>
-    </div>
-  </aside>
+      <main></main>
+    </div> <!-- right -->
+
+    <aside id="mySidenav" class="sidenav">
+      <div class="sidenav-wrapper">
+        <!-- <div class="up-part"> -->
+          <!-- <button id="addShortcut">Add a thing</button> -->
+          <!-- <a href="#" id="closeMenu" class="closebtn">&times;</a> -->
+        <!-- </div> -->
+        <!-- <div class="divider"></div>  -->
+        <div class="sidenavList" id="sidenavList"></div>
+        <!-- <div class="divider"></div> -->
+        <!-- <button id="reset">RESET</button> -->
+      </div> <!-- sidenav wrapper -->
+    </aside>
+  </div> <!-- wrapper -->
 
   <div class="modal">
     <section>
