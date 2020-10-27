@@ -1,3 +1,37 @@
-/* * Sidebar */
 
+/*
+  * Sidebar
+  - width: 300px
+  - padding: 25px on each side
+  - content width: 250px :)
+                  (math)
+*/
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #0000ff;
+}
+.sidebar-list {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 25px;
+  overflow-y: auto;
+  background-color: #0000ff;
+  gap: 1000px;
+}
+.sidebar-list::-webkit-scrollbar {
+  border-radius: 2px;
+  width: 4px;
+}
+.sidebar-list::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background-color: #00000077;
+}
+.sidebar-list::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #00ff00;
+}
 /* * Folder Card */

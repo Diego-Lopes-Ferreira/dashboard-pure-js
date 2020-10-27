@@ -12,10 +12,25 @@ header h3 {
 
 /* * List of items */
 .list-of-items {
+  display: flex;
   flex: 1;
-  padding: 2rem;
+  width: 100%;
   flex-wrap: wrap;
+  padding: 2rem;
   overflow-y: auto;
   background-color: #00ffff;
+  gap: 1000px;
+}
+.list-of-items::-webkit-scrollbar {
+  border-radius: 2px;
+  width: 4px;
+}
+.list-of-items::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background-color: #00000077;
+}
+.list-of-items::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #00ff00;
 }
 /* * Item Card */
