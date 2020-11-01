@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 root {
-  --main-color: #000000;
+  --theme-color: #000000;
+
   --text-main-color: #f0f0f0;
+  --text-secondary-color: #f0f0f0;
+
+  --background-one: #ff0000;
+  --background-one-offset: #ff000077;
+  --background-two: #00ff00;
+  --background-two-offset: #00ff0077;
+
+  --transition-time: 200ms;
+  --card-size: 150px;
 }
 
 * {
@@ -43,7 +53,6 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-
   /*
   background-image: url("../assets/plant-1.jpg");
   background-position: center;
@@ -52,9 +61,14 @@ body {
   background-attachment: fixed;
   */
 }
-
 main {
   flex: 1;
   height: 100%;
   min-height: 100%;
+}
+button {
+  transition: 200ms;
+}
+button:hover {
+  transform: translateY(-5%);
 }

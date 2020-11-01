@@ -6,6 +6,7 @@ header {
   text-align: left;
   background-color: #ff0000;
 }
+
 header h3 {
   text-align: left;
 }
@@ -21,16 +22,74 @@ header h3 {
   background-color: #00ffff;
   gap: 1000px;
 }
+
 .list-of-items::-webkit-scrollbar {
   border-radius: 2px;
   width: 4px;
 }
+
 .list-of-items::-webkit-scrollbar-track {
   border-radius: 2px;
   background-color: #00000077;
 }
+
 .list-of-items::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: #00ff00;
 }
+
 /* * Item Card */
+.item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  transition: 200ms;
+}
+
+.item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+
+  text-decoration: none;
+
+  background-color: #0ff00f;
+}
+
+.item:hover {
+  transform: translateY(-1%);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.item a h1 {
+  color: #0f0f0f;
+  font-size: 24px;
+}
+
+.item button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  height: fit-content;
+  border-radius: 5px;
+  border: 0;
+
+  padding: 5px;
+  background-color: transparent;
+
+  transition: all 200ms;
+}
+
+.item button:hover {
+  background-color: #00000099;
+  transform: translate(0);
+}
