@@ -35,7 +35,7 @@ import {
   resetDB,
   exportToUser,
   importFromUser,
-} from "./localstorage.api";
+} from "./database.api";
 import { fillForm, clearForm, readForm, readImportTextarea } from "./form.api";
 import renderCards from "./views";
 

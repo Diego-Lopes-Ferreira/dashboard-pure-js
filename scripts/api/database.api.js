@@ -44,6 +44,7 @@ const resetInfo = [
 export function readAllFromDB() {
   const stored = localStorage.getItem(localStorageKey);
   let elements = JSON.parse(stored);
+  console.log(elements)
   return elements;
 }
 

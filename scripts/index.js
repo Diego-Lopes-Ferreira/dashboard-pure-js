@@ -23,10 +23,10 @@ document.querySelector("#changeQuote").onclick = generateQuote;
 // document.querySelector("#saveModal").onclick = handleSave;
 // document.querySelector("#closeModal").onclick = handleToggleModal;
 
-document.querySelector("#import").onclick = handleExportToUser;
-document.querySelector("#export").onclick = handleToggleTextareaModal;
-document.querySelector("#closeTextareaModal").onclick = handleToggleTextareaModal;
-document.querySelector("#saveTextareaModal").onclick = handleImportFromUser;
+// document.querySelector("#import").onclick = handleExportToUser;
+// document.querySelector("#export").onclick = handleToggleTextareaModal;
+// document.querySelector("#closeTextareaModal").onclick = handleToggleTextareaModal;
+// document.querySelector("#saveTextareaModal").onclick = handleImportFromUser;
 // document.querySelector("#wrapper").onclick = handleCloseMenu;
 
 renderCards();
