@@ -1,15 +1,16 @@
 import generateQuote from "./quotes";
 import renderCards from "./views/views";
+import { handleReset } from './handlers';
 
 generateQuote();
 window.addEventListener("focus", generateQuote);
 document.querySelector("#changeQuote").onclick = generateQuote;
+document.querySelector("#reset").onclick = handleReset;
 
 renderCards();
 
 // document.querySelector("#openMenu").onclick = handleToggleMenu;
 // document.querySelector("#closeMenu").onclick = handleToggleMenu;
-// document.querySelector("#reset").onclick = handleReset;
 
 // document.querySelector("#addShortcut").onclick = handleToggleModal;
 // document.querySelector("#saveModal").onclick = handleSave;

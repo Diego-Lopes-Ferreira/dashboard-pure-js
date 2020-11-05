@@ -1,19 +1,23 @@
 /*
-  [v] readAllFromDB()      exported
-  [v] saveOnDB(elements)   exported
-  [v] readFoldersFromDB()  exported
-  [v] readItemsFromDB()    exported
-  [v] readFolderFromDB(id) exported
-  [v] importDB(db)         exported
-  [v] exportDB()           exported
-  [v] resetDB              exported
-  [v] generateId           exported
+  [v] readAllFromDB()         exported
+  [v] saveOnDB(elements)      exported
+  [v] readFoldersFromDB()     exported
+  [v] readItemsFromDB()       exported
+  [v] readFolderFromDB(id)    exported
+  [v] readCurrentFolderFromDB exported
+  [v] setCurrentFolderOnDB    exported
+  [v] importDB(db)            exported
+  [v] exportDB()              exported
+  [v] resetDB                 exported
+  [v] generateId              exported
 */
-const localStorageKey = "app-name-items";
+const itemsLocalStorageKey = "app-name-items";
+const currentFolderStorageKey = "app-name-current-folder";
+const resetCurrentFolderInfo = "0000";
 const resetInfo = [
   {
     id: "0000",
-    name: "Folder 1",
+    name: "The folder name",
     icon: "home",
     items: [
       {
@@ -42,15 +46,14 @@ const resetInfo = [
 ];
 
 export function readAllFromDB() {
-  const stored = localStorage.getItem(localStorageKey);
+  const stored = localStorage.getItem(itemsLocalStorageKey);
   let elements = JSON.parse(stored);
-  console.log(elements)
   return elements;
 }
 
 export function saveOnDB(elements) {
   let toStore = JSON.stringify(elements);
-  localStorage.setItem(localStorageKey, toStore);
+  localStorage.setItem(itemsLocalStorageKey, toStore);
 }
 
 export function readFoldersFromDB() {
@@ -81,6 +84,17 @@ export function readFolderFromDB(id) {
   return itemsFromFolder;
 }
 
+export function readCurrentFolderFromDB() {
+  const stored = localStorage.getItem(currentFolderStorageKey);
+  return stored;
+}
+
+export function setCurrentFolderOnDB(folderId) {
+  if (readCurrentFolderFromDB() !== folderId) {
+    localStorage.setItem(currentFolderStorageKey, folderId);
+  }
+}
+
 export function importDB(db) {
   saveOnDB(db);
 }
@@ -92,7 +106,8 @@ export function exportDB() {
 }
 
 export function resetDB() {
-  localStorage.setItem(localStorageKey, JSON.stringify(resetInfo));
+  localStorage.setItem(itemsLocalStorageKey, JSON.stringify(resetInfo));
+  localStorage.setItem(currentFolderStorageKey, resetCurrentFolderInfo);
 }
 
 export function generateId() {
