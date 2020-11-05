@@ -1,19 +1,11 @@
 import generateQuote from "./quotes";
-import renderCards from "./views";
-import {
-  handleReset,
-  handleSave,
-  handleToggleMenu,
-  // handleCloseMenu,
-  handleToggleModal,
-  handleExportToUser,
-  handleImportFromUser,
-  handleToggleTextareaModal,
-} from "./handlers";
+import renderCards from "./views/views";
 
 generateQuote();
 window.addEventListener("focus", generateQuote);
 document.querySelector("#changeQuote").onclick = generateQuote;
+
+renderCards();
 
 // document.querySelector("#openMenu").onclick = handleToggleMenu;
 // document.querySelector("#closeMenu").onclick = handleToggleMenu;
@@ -28,5 +20,3 @@ document.querySelector("#changeQuote").onclick = generateQuote;
 // document.querySelector("#closeTextareaModal").onclick = handleToggleTextareaModal;
 // document.querySelector("#saveTextareaModal").onclick = handleImportFromUser;
 // document.querySelector("#wrapper").onclick = handleCloseMenu;
-
-renderCards();

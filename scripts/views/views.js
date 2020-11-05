@@ -9,7 +9,7 @@
     loop for each element creating a card and sidebarcard
 */
 
-import { readAllFromDB } from "./database.api";
+import { readAllFromDB } from "../api/database.api";
 
 export default function renderCards() {
   const mainPart = document.querySelector(".list-of-items");
@@ -33,6 +33,7 @@ export default function renderCards() {
       });
     } // else (elements.length)
   } // else (elements)
+  console.log('hi')
   feather.replace();
 }
 

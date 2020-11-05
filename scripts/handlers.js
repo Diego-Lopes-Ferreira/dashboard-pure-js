@@ -35,9 +35,9 @@ import {
   resetDB,
   exportToUser,
   importFromUser,
-} from "./database.api";
-import { fillForm, clearForm, readForm, readImportTextarea } from "./form.api";
-import renderCards from "./views";
+} from "./api/database.api";
+import { fillForm, clearForm, readForm, readImportTextarea } from "./api/form.api";
+import renderCards from "./views/views";
 
 export function handleToggleModal() {
   handleCloseMenu();
