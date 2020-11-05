@@ -648,7 +648,54 @@ function handleImportFromUser() {
   handleToggleTextareaModal();
   (0, _views.default)();
 }
-},{"./api/database.api":"api/database.api.js","./api/form.api":"../scripts/api/form.api.js","./views/views":"views/views.js"}],"index.js":[function(require,module,exports) {
+},{"./api/database.api":"api/database.api.js","./api/form.api":"../scripts/api/form.api.js","./views/views":"views/views.js"}],"handlers/modal.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.openFolderModalClear = openFolderModalClear;
+exports.openItemModalClear = openItemModalClear;
+exports.openFolderModalFill = openFolderModalFill;
+exports.openItemModalFill = openItemModalFill;
+exports.closeFolderModalFill = closeFolderModalFill;
+exports.closeItemModalFill = closeItemModalFill;
+var folderModalContainer = document.querySelector(".modal-container#folder");
+var folderModalCloseBtn = document.querySelector(".modal-container#folder #close");
+var itemModalContainer = document.querySelector(".modal-container#item");
+var itemModalCloseBtn = document.querySelector(".modal-container#item #close");
+
+function openFolderModalClear() {}
+
+function openItemModalClear() {}
+
+function openFolderModalFill(folder) {}
+
+function openItemModalFill(item) {}
+
+function closeFolderModalFill() {}
+
+function closeItemModalFill() {}
+/* 
+[v] const button = document.querySelector(".button");
+[v] const closeButton = document.querySelector('#close');
+
+[ ] button.onclick = open;
+
+[ ] closeButton.onclick = close;
+
+[ ] function close() {
+*   theDiv.classList.add("out");
+*   document.querySelector("body").classList.remove("modal-active");
+* }
+[ ] function open() {
+*   let buttonId = "two";
+*   theDiv.setAttribute("class", "");
+*   theDiv.classList.add(buttonId);
+*   document.querySelector("body").classList.add("modal-active");
+* }
+*/
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _quotes = _interopRequireDefault(require("./quotes"));
@@ -657,12 +704,15 @@ var _views = _interopRequireDefault(require("./views/views"));
 
 var _handlers = require("./handlers");
 
+var _modal = require("./handlers/modal");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _quotes.default)();
 window.addEventListener("focus", _quotes.default);
 document.querySelector("#changeQuote").onclick = _quotes.default;
 document.querySelector("#reset").onclick = _handlers.handleReset;
+document.querySelector("#show").onclick = _modal.openFolderModalClear;
 (0, _views.default)(); // document.querySelector("#openMenu").onclick = handleToggleMenu;
 // document.querySelector("#closeMenu").onclick = handleToggleMenu;
 // document.querySelector("#addShortcut").onclick = handleToggleModal;
@@ -673,7 +723,7 @@ document.querySelector("#reset").onclick = _handlers.handleReset;
 // document.querySelector("#closeTextareaModal").onclick = handleToggleTextareaModal;
 // document.querySelector("#saveTextareaModal").onclick = handleImportFromUser;
 // document.querySelector("#wrapper").onclick = handleCloseMenu;
-},{"./quotes":"../scripts/quotes.js","./views/views":"views/views.js","./handlers":"../scripts/handlers.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./quotes":"../scripts/quotes.js","./views/views":"views/views.js","./handlers":"../scripts/handlers.js","./handlers/modal":"handlers/modal.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

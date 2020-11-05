@@ -34,39 +34,45 @@
           <h3 id="who"></h3>
         </div>
         <div class="buttons">
+          <button id="show">IDK IDK</button>
           <button id="reset">RESET</button>
         </div>
       </header>
       <section class="list-of-items row">
-        <div class="item" href="link">
-          <a href="link">
-            <i>ICONe</i>
-            <h1>Name</h1>
-          </a>
-          <button>&#8901&#8901&#8901</button>
-        </div>
+
       </section>
     </main>
 
     <aside class="sidebar column">
       <div class="sidebar-list" id="sidenavList">
-        <button class="folder-card selected">
-          <p>a</p>
-          <p>AAAAAAAAAAAA</p>
-        </button>
-        <button class="folder-card">aaaaaaaaaaaa</button>
-        <button class="folder-card">AAAAAAAAAAAA</button>
-        <button class="folder-card">aaaaaaaaaaaa</button>
-        <button class="folder-card">AAAAAAAAAAAA</button>
-        <button class="folder-card">aaaaaaaaaaaa</button>
-        <button class="folder-card">AAAAAAAAAAAA</button>
-        <button class="folder-card">aaaaaaaaaaaa</button>
-        <button class="folder-card">AAAAAAAAAAAA</button>
-        <button class="folder-card">aaaaaaaaaaaa</button>
+
       </div>
     </aside>
+    <div class="modal-container" id="folder">
+      <div class="modal-background">
+        <div class="modal">
+          <form action="">
+            <input type="text" name="" id="name" placeholder="name" />
+            <input type="text" name="" id="icon" placeholder="icon" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal-container" id="item">
+      <div class="modal-background">
+        <div class="modal">
+          <form action="">
+            <input type="text" name="" id="title" placeholder="title" />
+            <input type="text" name="" id="link" placeholder="link" />
+            <input type="text" name="" id="icon" placeholder="icon" />
+          </form>
+          <div id="close">
+            <i data-feather="x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div> <!-- wrapper -->
-
   <script src="./feather.min.js"></script>
   <script src="./index.js"></script>
 </body>

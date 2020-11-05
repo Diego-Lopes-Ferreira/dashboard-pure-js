@@ -1,11 +1,14 @@
 import generateQuote from "./quotes";
 import renderCards from "./views/views";
 import { handleReset } from './handlers';
+import {openFolderModalClear} from './handlers/modal'
 
 generateQuote();
 window.addEventListener("focus", generateQuote);
 document.querySelector("#changeQuote").onclick = generateQuote;
 document.querySelector("#reset").onclick = handleReset;
+
+document.querySelector("#show").onclick = openFolderModalClear;
 
 renderCards();
 
