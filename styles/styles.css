@@ -66,9 +66,3 @@ main {
   height: 100%;
   min-height: 100%;
 }
-button {
-  transition: 200ms;
-}
-button:hover {
-  transform: translateY(-5%);
-}

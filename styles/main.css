@@ -6,9 +6,15 @@ header {
   text-align: left;
   background-color: #ff0000;
 }
-
 header h3 {
+  color: #f0f0f0;
+  font-size: 1.2rem;
   text-align: left;
+}
+header h3#who {
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-style: italic;
 }
 
 /* * List of items */
