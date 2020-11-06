@@ -1,22 +1,29 @@
-const folderModalContainer = document.querySelector(".modal-container#folder");
-const folderModalCloseBtn = document.querySelector(".modal-container#folder #close");
+import { fillForm } from "../api/form.api";
 
-const itemModalContainer = document.querySelector(".modal-container#item");
-const itemModalCloseBtn = document.querySelector(".modal-container#item #close");
+// * FOLDER
+const folderModalContainer = document.querySelector(".modal-container#folder");
 
 export function openFolderModalClear() {
-}
-export function openItemModalClear() {
+  folderModalContainer.classList.remove("out");
+  folderModalContainer.classList.remove("show");
+  folderModalContainer.classList.add("show");
 }
 export function openFolderModalFill(folder) {
+  openFolderModalClear();
+  fillFolderForm(folder);
 }
-export function openItemModalFill(item) {
-}
-export function closeFolderModalFill() {
-}
-export function closeItemModalFill() {
+export function closeFolderModal() {
+  folderModalContainer.classList.add("out");
 }
 
+// * ITEM
+const itemModalContainer = document.querySelector(".modal-container#item");
+const itemModalCloseBtn = document.querySelector(
+  ".modal-container#item #close"
+);
+export function openItemModalClear() {}
+export function openItemModalFill(item) {}
+export function closeItemModal() {}
 
 /* 
 [v] const button = document.querySelector(".button");
@@ -26,14 +33,13 @@ export function closeItemModalFill() {
 
 [ ] closeButton.onclick = close;
 
-[ ] function close() {
+[ ]
+* function close() {
 *   theDiv.classList.add("out");
-*   document.querySelector("body").classList.remove("modal-active");
 * }
-[ ] function open() {
-*   let buttonId = "two";
+[ ] 
+* function open() {
 *   theDiv.setAttribute("class", "");
-*   theDiv.classList.add(buttonId);
-*   document.querySelector("body").classList.add("modal-active");
+*   theDiv.classList.add(show);
 * }
 */

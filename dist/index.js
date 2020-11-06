@@ -655,27 +655,41 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.openFolderModalClear = openFolderModalClear;
-exports.openItemModalClear = openItemModalClear;
 exports.openFolderModalFill = openFolderModalFill;
+exports.closeFolderModal = closeFolderModal;
+exports.openItemModalClear = openItemModalClear;
 exports.openItemModalFill = openItemModalFill;
-exports.closeFolderModalFill = closeFolderModalFill;
-exports.closeItemModalFill = closeItemModalFill;
+exports.closeItemModal = closeItemModal;
+
+var _form = require("../api/form.api");
+
+// * FOLDER
 var folderModalContainer = document.querySelector(".modal-container#folder");
-var folderModalCloseBtn = document.querySelector(".modal-container#folder #close");
+
+function openFolderModalClear() {
+  folderModalContainer.classList.remove("out");
+  folderModalContainer.classList.remove("show");
+  folderModalContainer.classList.add("show");
+}
+
+function openFolderModalFill(folder) {
+  openFolderModalClear();
+  fillFolderForm(folder);
+}
+
+function closeFolderModal() {
+  folderModalContainer.classList.add("out");
+} // * ITEM
+
+
 var itemModalContainer = document.querySelector(".modal-container#item");
 var itemModalCloseBtn = document.querySelector(".modal-container#item #close");
 
-function openFolderModalClear() {}
-
 function openItemModalClear() {}
-
-function openFolderModalFill(folder) {}
 
 function openItemModalFill(item) {}
 
-function closeFolderModalFill() {}
-
-function closeItemModalFill() {}
+function closeItemModal() {}
 /* 
 [v] const button = document.querySelector(".button");
 [v] const closeButton = document.querySelector('#close');
@@ -684,18 +698,17 @@ function closeItemModalFill() {}
 
 [ ] closeButton.onclick = close;
 
-[ ] function close() {
+[ ]
+* function close() {
 *   theDiv.classList.add("out");
-*   document.querySelector("body").classList.remove("modal-active");
 * }
-[ ] function open() {
-*   let buttonId = "two";
+[ ] 
+* function open() {
 *   theDiv.setAttribute("class", "");
-*   theDiv.classList.add(buttonId);
-*   document.querySelector("body").classList.add("modal-active");
+*   theDiv.classList.add(show);
 * }
 */
-},{}],"index.js":[function(require,module,exports) {
+},{"../api/form.api":"../scripts/api/form.api.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _quotes = _interopRequireDefault(require("./quotes"));
@@ -713,6 +726,7 @@ window.addEventListener("focus", _quotes.default);
 document.querySelector("#changeQuote").onclick = _quotes.default;
 document.querySelector("#reset").onclick = _handlers.handleReset;
 document.querySelector("#show").onclick = _modal.openFolderModalClear;
+document.querySelector(".modal-container#folder #close").onclick = _modal.closeFolderModal;
 (0, _views.default)(); // document.querySelector("#openMenu").onclick = handleToggleMenu;
 // document.querySelector("#closeMenu").onclick = handleToggleMenu;
 // document.querySelector("#addShortcut").onclick = handleToggleModal;
@@ -751,7 +765,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56233" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59100" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
