@@ -16,20 +16,53 @@ export default function createCard(item, where) {
   let titleElement = document.createElement("h1");
   let btnEdit = document.createElement("button");
 
-  externalDiv.classList.add('item');
+  let rippleDiv = document.createElement("div");
+  rippleDiv.classList.add('wave1');
+
+  externalDiv.classList.add("item");
   anchor.setAttribute("href", link);
   anchor.setAttribute("title", `Go to "${link}"`);
   iconElement.setAttribute("data-feather", icon);
   titleElement.innerHTML = title;
-  btnEdit.innerHTML = '&#8901&#8901&#8901';
+  btnEdit.innerHTML = "&#8901&#8901&#8901";
   btnEdit.setAttribute("title", `Edit ${title}`);
   btnEdit.onclick = () => {
-    alert(`You are editing the:\n  title: ${title}\n  id: ${id}\n  link: ${link}\n  icon: ${icon}`)
+    alert(
+      `You are editing the:\n  title: ${title}\n  id: ${id}\n  link: ${link}\n  icon: ${icon}`
+    );
   };
 
   anchor.appendChild(iconElement);
   anchor.appendChild(titleElement);
   externalDiv.appendChild(anchor);
   externalDiv.appendChild(btnEdit);
+
+  externalDiv.appendChild(rippleDiv)
+
   where.appendChild(externalDiv);
 }
+
+export function createPlusCard(where) {
+  let externalBtn = document.createElement("button");
+  let iconElement = document.createElement("i");
+  let rippleDiv = document.createElement("div");
+
+  externalBtn.classList.add("item");
+  externalBtn.classList.add("create");
+  externalBtn.setAttribute("title", `Create New Shortcut`);
+
+  iconElement.setAttribute("data-feather", "plus");
+  
+  rippleDiv.classList.add('wave1');
+
+  externalBtn.appendChild(iconElement);
+  externalBtn.appendChild(rippleDiv);
+  
+  where.appendChild(externalBtn);
+}
+/*
+<div class="item" href="link">
+  <button class="item" id="show-item">Create shortcut</button> 
+  <button>&#8901&#8901&#8901</button>
+</div>
+  */

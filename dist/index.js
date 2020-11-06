@@ -217,6 +217,29 @@ var resetInfo = [{
     icon: "home",
     title: "Habitica",
     desc: "Gamify your life"
+  }, {
+    id: "0004",
+    link: "https://youtube.com/",
+    icon: "home",
+    title: "YouTube",
+    desc: "Videos videos videos"
+  }]
+}, {
+  id: "0001",
+  name: "Another Folder",
+  icon: "plus",
+  items: [{
+    id: "0000",
+    link: "https://www.notion.so",
+    icon: "home",
+    title: "Notion",
+    desc: "The all in one workspace"
+  }, {
+    id: "0001",
+    link: "https://github.com/Diego-Lopes-Ferreira",
+    icon: "home",
+    title: "Github",
+    desc: "The world's leading software development platform"
   }]
 }];
 
@@ -314,6 +337,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = createCard;
+exports.createPlusCard = createPlusCard;
 
 function createCard(item, where) {
   // item = { id: '000000',link: string, icon: string, title: string }
@@ -336,12 +360,14 @@ function createCard(item, where) {
   var iconElement = document.createElement("i");
   var titleElement = document.createElement("h1");
   var btnEdit = document.createElement("button");
-  externalDiv.classList.add('item');
+  var rippleDiv = document.createElement("div");
+  rippleDiv.classList.add('wave1');
+  externalDiv.classList.add("item");
   anchor.setAttribute("href", link);
   anchor.setAttribute("title", "Go to \"".concat(link, "\""));
   iconElement.setAttribute("data-feather", icon);
   titleElement.innerHTML = title;
-  btnEdit.innerHTML = '&#8901&#8901&#8901';
+  btnEdit.innerHTML = "&#8901&#8901&#8901";
   btnEdit.setAttribute("title", "Edit ".concat(title));
 
   btnEdit.onclick = function () {
@@ -352,8 +378,29 @@ function createCard(item, where) {
   anchor.appendChild(titleElement);
   externalDiv.appendChild(anchor);
   externalDiv.appendChild(btnEdit);
+  externalDiv.appendChild(rippleDiv);
   where.appendChild(externalDiv);
 }
+
+function createPlusCard(where) {
+  var externalBtn = document.createElement("button");
+  var iconElement = document.createElement("i");
+  var rippleDiv = document.createElement("div");
+  externalBtn.classList.add("item");
+  externalBtn.classList.add("create");
+  externalBtn.setAttribute("title", "Create New Shortcut");
+  iconElement.setAttribute("data-feather", "plus");
+  rippleDiv.classList.add('wave1');
+  externalBtn.appendChild(iconElement);
+  externalBtn.appendChild(rippleDiv);
+  where.appendChild(externalBtn);
+}
+/*
+<div class="item" href="link">
+  <button class="item" id="show-item">Create shortcut</button> 
+  <button>&#8901&#8901&#8901</button>
+</div>
+  */
 },{}],"views/sidebarFolder.js":[function(require,module,exports) {
 "use strict";
 
@@ -405,11 +452,15 @@ exports.default = renderCards;
 
 var _database = require("../api/database.api");
 
-var _item = _interopRequireDefault(require("./item"));
+var _item = _interopRequireWildcard(require("./item"));
 
 var _sidebarFolder = _interopRequireDefault(require("./sidebarFolder"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function renderCards() {
   var mainPart = document.querySelector(".list-of-items");
@@ -431,6 +482,7 @@ function renderCards() {
           items.forEach(function (item) {
             (0, _item.default)(item, mainPart);
           });
+          (0, _item.createPlusCard)(mainPart);
         }
       });
     } else {
@@ -733,9 +785,9 @@ window.addEventListener("focus", _quotes.default);
 document.querySelector("#changeQuote").onclick = _quotes.default;
 document.querySelector("#reset").onclick = _handlers.handleReset;
 document.querySelector("#show").onclick = _modal.openFolderModalClear;
-document.querySelector(".modal-container#folder #close").onclick = _modal.closeFolderModal;
-document.querySelector("#show-item").onclick = _modal.openItemModalClear;
-document.querySelector(".modal-container#item #close").onclick = _modal.closeItemModal;
+document.querySelector(".modal-container#folder #close").onclick = _modal.closeFolderModal; // document.querySelector("#show-item").onclick = openItemModalClear;
+// document.querySelector(".modal-container#item #close").onclick = closeItemModal;
+
 (0, _views.default)(); // document.querySelector("#openMenu").onclick = handleToggleMenu;
 // document.querySelector("#closeMenu").onclick = handleToggleMenu;
 // document.querySelector("#addShortcut").onclick = handleToggleModal;
@@ -774,7 +826,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59100" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60553" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

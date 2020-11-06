@@ -41,6 +41,34 @@ const resetInfo = [
         title: "Habitica",
         desc: "Gamify your life",
       },
+      {
+        id: "0004",
+        link: "https://youtube.com/",
+        icon: "home",
+        title: "YouTube",
+        desc: "Videos videos videos",
+      },
+    ],
+  },
+  {
+    id: "0001",
+    name: "Another Folder",
+    icon: "plus",
+    items: [
+      {
+        id: "0000",
+        link: "https://www.notion.so",
+        icon: "home",
+        title: "Notion",
+        desc: "The all in one workspace",
+      },
+      {
+        id: "0001",
+        link: "https://github.com/Diego-Lopes-Ferreira",
+        icon: "home",
+        title: "Github",
+        desc: "The world's leading software development platform",
+      },
     ],
   },
 ];

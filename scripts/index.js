@@ -1,7 +1,12 @@
 import generateQuote from "./quotes";
 import renderCards from "./views/views";
 import { handleReset } from "./handlers";
-import { closeFolderModal, closeItemModal, openFolderModalClear, openItemModalClear } from "./handlers/modal";
+import {
+  closeFolderModal,
+  closeItemModal,
+  openFolderModalClear,
+  openItemModalClear,
+} from "./handlers/modal";
 
 generateQuote();
 window.addEventListener("focus", generateQuote);
@@ -11,12 +16,10 @@ document.querySelector("#reset").onclick = handleReset;
 document.querySelector("#show").onclick = openFolderModalClear;
 document.querySelector(
   ".modal-container#folder #close"
-  ).onclick = closeFolderModal;
-  
-document.querySelector("#show-item").onclick = openItemModalClear;
-document.querySelector(
-  ".modal-container#item #close"
-).onclick = closeItemModal;
+).onclick = closeFolderModal;
+
+// document.querySelector("#show-item").onclick = openItemModalClear;
+// document.querySelector(".modal-container#item #close").onclick = closeItemModal;
 
 renderCards();
 
