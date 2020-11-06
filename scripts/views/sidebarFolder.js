@@ -15,11 +15,13 @@ export default function createSidebarCard(item, where) {
   let btnEdit = document.createElement("button");
 
 
+  sideBarButton.setAttribute('title', `Select folder: ${name}`);
   iconElement.setAttribute("data-feather", icon);
 
   header.innerHTML = name;
 
   btnEdit.innerHTML = '&#8901&#8901&#8901';
+  btnEdit.setAttribute('title', `Edit ${name}`);
   btnEdit.onclick = () => {
     alert(`You are editing the:\n  title: ${name}\n  id: ${id}\n  icon: ${icon}`)
   };

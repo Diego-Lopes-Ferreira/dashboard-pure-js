@@ -338,9 +338,11 @@ function createCard(item, where) {
   var btnEdit = document.createElement("button");
   externalDiv.classList.add('item');
   anchor.setAttribute("href", link);
+  anchor.setAttribute("title", "Go to \"".concat(link, "\""));
   iconElement.setAttribute("data-feather", icon);
   titleElement.innerHTML = title;
   btnEdit.innerHTML = '&#8901&#8901&#8901';
+  btnEdit.setAttribute("title", "Edit ".concat(title));
 
   btnEdit.onclick = function () {
     alert("You are editing the:\n  title: ".concat(title, "\n  id: ").concat(id, "\n  link: ").concat(link, "\n  icon: ").concat(icon));
@@ -377,9 +379,11 @@ function createSidebarCard(item, where) {
   var header = document.createElement("h1");
   var iconElement = document.createElement("i");
   var btnEdit = document.createElement("button");
+  sideBarButton.setAttribute('title', "Select folder: ".concat(name));
   iconElement.setAttribute("data-feather", icon);
   header.innerHTML = name;
   btnEdit.innerHTML = '&#8901&#8901&#8901';
+  btnEdit.setAttribute('title', "Edit ".concat(name));
 
   btnEdit.onclick = function () {
     alert("You are editing the:\n  title: ".concat(name, "\n  id: ").concat(id, "\n  icon: ").concat(icon));

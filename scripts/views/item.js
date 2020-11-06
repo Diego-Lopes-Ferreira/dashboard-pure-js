@@ -18,9 +18,11 @@ export default function createCard(item, where) {
 
   externalDiv.classList.add('item');
   anchor.setAttribute("href", link);
+  anchor.setAttribute("title", `Go to "${link}"`);
   iconElement.setAttribute("data-feather", icon);
   titleElement.innerHTML = title;
   btnEdit.innerHTML = '&#8901&#8901&#8901';
+  btnEdit.setAttribute("title", `Edit ${title}`);
   btnEdit.onclick = () => {
     alert(`You are editing the:\n  title: ${title}\n  id: ${id}\n  link: ${link}\n  icon: ${icon}`)
   };
