@@ -664,9 +664,6 @@ exports.closeFolderModal = closeFolderModal;
 exports.openItemModalClear = openItemModalClear;
 exports.openItemModalFill = openItemModalFill;
 exports.closeItemModal = closeItemModal;
-
-var _form = require("../api/form.api");
-
 // * FOLDER
 var folderModalContainer = document.querySelector(".modal-container#folder");
 
@@ -677,8 +674,7 @@ function openFolderModalClear() {
 }
 
 function openFolderModalFill(folder) {
-  openFolderModalClear();
-  fillFolderForm(folder);
+  openFolderModalClear(); // fillFolderForm(folder);
 }
 
 function closeFolderModal() {
@@ -687,13 +683,20 @@ function closeFolderModal() {
 
 
 var itemModalContainer = document.querySelector(".modal-container#item");
-var itemModalCloseBtn = document.querySelector(".modal-container#item #close");
 
-function openItemModalClear() {}
+function openItemModalClear() {
+  itemModalContainer.classList.remove("show");
+  itemModalContainer.classList.remove("out");
+  itemModalContainer.classList.add("show");
+}
 
-function openItemModalFill(item) {}
+function openItemModalFill(item) {
+  openItemModalClear(); // fillItemForm(item);
+}
 
-function closeItemModal() {}
+function closeItemModal() {
+  itemModalContainer.classList.add("out");
+}
 /* 
 [v] const button = document.querySelector(".button");
 [v] const closeButton = document.querySelector('#close');
@@ -712,7 +715,7 @@ function closeItemModal() {}
 *   theDiv.classList.add(show);
 * }
 */
-},{"../api/form.api":"../scripts/api/form.api.js"}],"index.js":[function(require,module,exports) {
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _quotes = _interopRequireDefault(require("./quotes"));
@@ -731,6 +734,8 @@ document.querySelector("#changeQuote").onclick = _quotes.default;
 document.querySelector("#reset").onclick = _handlers.handleReset;
 document.querySelector("#show").onclick = _modal.openFolderModalClear;
 document.querySelector(".modal-container#folder #close").onclick = _modal.closeFolderModal;
+document.querySelector("#show-item").onclick = _modal.openItemModalClear;
+document.querySelector(".modal-container#item #close").onclick = _modal.closeItemModal;
 (0, _views.default)(); // document.querySelector("#openMenu").onclick = handleToggleMenu;
 // document.querySelector("#closeMenu").onclick = handleToggleMenu;
 // document.querySelector("#addShortcut").onclick = handleToggleModal;

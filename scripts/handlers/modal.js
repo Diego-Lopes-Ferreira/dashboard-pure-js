@@ -1,5 +1,3 @@
-import { fillForm } from "../api/form.api";
-
 // * FOLDER
 const folderModalContainer = document.querySelector(".modal-container#folder");
 
@@ -10,7 +8,7 @@ export function openFolderModalClear() {
 }
 export function openFolderModalFill(folder) {
   openFolderModalClear();
-  fillFolderForm(folder);
+  // fillFolderForm(folder);
 }
 export function closeFolderModal() {
   folderModalContainer.classList.add("out");
@@ -18,12 +16,19 @@ export function closeFolderModal() {
 
 // * ITEM
 const itemModalContainer = document.querySelector(".modal-container#item");
-const itemModalCloseBtn = document.querySelector(
-  ".modal-container#item #close"
-);
-export function openItemModalClear() {}
-export function openItemModalFill(item) {}
-export function closeItemModal() {}
+
+export function openItemModalClear() {
+  itemModalContainer.classList.remove("show");
+  itemModalContainer.classList.remove("out");
+  itemModalContainer.classList.add("show");
+}
+export function openItemModalFill(item) {
+  openItemModalClear();
+  // fillItemForm(item);
+}
+export function closeItemModal() {
+  itemModalContainer.classList.add("out");
+}
 
 /* 
 [v] const button = document.querySelector(".button");
