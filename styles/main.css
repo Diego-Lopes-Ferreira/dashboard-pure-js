@@ -89,14 +89,20 @@ header h3#who {
   background-color: #0ff00f;
   overflow: hidden;
 }
+
+.item.create {
+  cursor: pointer;
+}
+
 .item a {
   display: flex;
+  flex: 1;
+  width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  z-index: 4;
   border-radius: 20px;
-
   text-decoration: none;
 }
 
@@ -124,6 +130,8 @@ header h3#who {
 
   transition: all 200ms;
   z-index: 5;
+
+  cursor: pointer;
 }
 
 .item button:hover {
@@ -145,7 +153,7 @@ header h3#who {
 }
 
 .item:hover > .wave1{
-	animation: ripple-in1 0.3s;
+	animation: ripple-in1 0.4s;
   transform: scale(1);
 }
 
